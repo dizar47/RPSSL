@@ -1,0 +1,70 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+#resetButtonWrapper
+{
+    text-align: right;
+}
+
+#playerName {
+    width: 10%;
+    margin: 0 auto;
+    cursor: pointer !important;
+}
+
+#playerEdit {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#history {
+    width: 40%;
+    margin: 0 auto;
+}
+
+#computerChoice > div, #playerChoice > div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#choicesList, #computerChoice, #playerChoice {
+    display: flex;
+    justify-content: center;
+}
+
+#choicesList > button, #computerChoice > div, #playerChoice > div {
+    margin: 20px;
+}
+
+.win {
+    background-color: forestgreen !important;
+}
+
+.lose {
+    background-color: crimson !important;
+}
+
+.tie {
+    background-color: gray !important;
+}

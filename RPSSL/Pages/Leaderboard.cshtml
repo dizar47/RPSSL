@@ -1,0 +1,42 @@
+﻿@page
+@using RPSSL.BL.Services
+@model LeaderboardModel
+
+@{
+    int n = 1;
+}
+
+@if (Model.Records.Any())
+{
+    <div id="resetButtonWrapper">
+        <form method="post">
+            <button type="submit" class="btn btn-danger" asp-page-handler="reset">
+                Reset
+            </button>
+        </form>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in Model.Records)
+            {
+                <tr>
+                    <th scope="row">@(n++)</th>
+                    <td>@record.Name</td>
+                    <td>@record.Score</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h4 class="text-center mt-5">There is nothing to show yet.</h4>
+}

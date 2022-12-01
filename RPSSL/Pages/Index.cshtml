@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Let's play";
+}
+
+<div class="text-center">
+    <div id="computer">Computer</div>
+    <div id="computerChoice"><div></div></div>
+    <div id="player">
+        <div id="playerName"><span></span> <i class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div id="playerEdit" class="form-inline" style="display:none">
+            <div class="form-group mx-sm-3 mb-2">
+                <label for="playerEditValue">Name</label>
+                <input class="form-control text-center" id="playerEditValue" placeholder="Enter your name">
+            </div>
+            <button type="submit" class="btn btn-outline-primary mb-2" onclick="saveEditedName()">Save</button>
+            <button type="submit" class="btn btn-outline-secondary mb-2" onclick="discardEditedNameChaneges()">Cancel</button>
+        </div>
+    </div>
+    <div id="playerChoice"><div></div></div>
+    <div id="choicesList"></div>
+    <div id="history"></div>
+</div>
+
+@section Scripts
+{
+    <script src="https://use.fontawesome.com/65757cbd1c.js"></script>
+}
+
+
