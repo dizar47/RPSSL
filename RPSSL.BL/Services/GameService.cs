@@ -54,12 +54,14 @@ namespace RPSSL.BL.Services
 
         public IEnumerable<GameServiceLeaderboardRecordResponse> GetLeaderboard()
         {
-            return leaderBoard
-                .Value
-                .Select(x => new GameServiceLeaderboardRecordResponse(x.Key, x.Value))
-                .OrderByDescending(x => x.Score)
-                .ThenBy(x => x.Name)
-                .Take(10);
+            return leaderBoard.IsValueCreated
+                ? leaderBoard
+                    .Value
+                    .Select(x => new GameServiceLeaderboardRecordResponse(x.Key, x.Value))
+                    .OrderByDescending(x => x.Score)
+                    .ThenBy(x => x.Name)
+                    .Take(10)
+                : Enumerable.Empty<GameServiceLeaderboardRecordResponse>();
         }
 
         public async Task<GameServiceRoundProcessingResponse> ProcessRound(ChoiceType playerChoice, string? playerName = null)
